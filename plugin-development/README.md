@@ -136,6 +136,127 @@ my-plugin/
 
 ---
 
+## 菜单配置 (menus.json)
+
+### 基本格式
+
+```json
+{
+  "menus": [
+    {
+      "name": "my-plugin-management",
+      "title": "我的插件",
+      "path": "/marketing/my-plugin",
+      "icon": "icon-gift",
+      "component": "marketing/my-plugin",
+      "sort": 100,
+      "permission": "plugin:my-plugin:view"
+    }
+  ]
+}
+```
+
+### 字段说明
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `name` | string | ✅ | 菜单唯一标识（通常为 `{插件代码}-management`） |
+| `title` | string | ✅ | 菜单显示名称 |
+| `path` | string | ✅ | 路由路径（格式：`/marketing/{插件代码}`） |
+| `icon` | string | ❌ | 菜单图标（Arco Design 图标名称，如 `icon-gift`） |
+| `component` | string | ✅ | **组件路径（格式：`marketing/{插件代码}`）** ⚠️ 重要 |
+| `sort` | number | ❌ | 排序权重（数字越大越靠后，默认100） |
+| `permission` | string | ❌ | 权限标识（格式：`plugin:{插件代码}:view`） |
+
+### ⚠️ 重要提示
+
+**component 字段格式**：
+- ✅ **正确格式**：`marketing/{插件代码}`
+- ❌ **错误格式**：`plugin:{插件代码}/views/index` （旧版本错误格式）
+
+**示例对比**：
+```json
+// ✅ 正确
+{
+  "component": "marketing/birthday-coupon"
+}
+
+// ❌ 错误
+{
+  "component": "plugin:birthday-coupon/views/index"
+}
+```
+
+### 菜单层级
+
+支持二级菜单（可选）：
+
+```json
+{
+  "menus": [
+    {
+      "title": "生日券管理",
+      "path": "/marketing/birthday-coupon",
+      "component": "marketing/birthday-coupon",
+      "icon": "icon-gift",
+      "order": 10,
+      "children": [
+        {
+          "title": "发券记录",
+          "path": "/marketing/birthday-coupon/records",
+          "component": "marketing/birthday-coupon/records",
+          "order": 1
+        },
+        {
+          "title": "统计分析",
+          "path": "/marketing/birthday-coupon/statistics",
+          "component": "marketing/birthday-coupon/statistics",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}
+```
+
+### 菜单显示规则
+
+1. **插件启用时**：菜单自动显示在左侧导航栏
+2. **插件禁用时**：菜单自动隐藏
+3. **权限控制**：如果配置了 `permission` 字段，用户必须有相应权限才能看到菜单
+
+### 安装流程
+
+插件上传后，系统会自动：
+1. 读取 `menus.json` 文件
+2. 在数据库中创建菜单记录
+3. 设置 `plugin_code` 关联到当前插件
+4. 根据插件状态动态显示/隐藏菜单
+
+### 常见问题
+
+**Q1: 插件启用后菜单不显示？**
+
+检查以下几点：
+1. `menus.json` 文件是否存在
+2. `component` 字段格式是否正确（使用 `marketing/{插件代码}` 格式）
+3. 插件的 `is_system` 字段是否为 1
+4. 清除浏览器缓存后刷新页面
+
+**Q2: 如何修改菜单图标？**
+
+修改 `icon` 字段，使用 Arco Design 图标名称，例如：
+- `icon-gift`：礼物图标
+- `icon-tag`：标签图标
+- `icon-fire`：火焰图标
+- `icon-star`：星星图标
+
+**Q3: 菜单支持多少级？**
+
+目前支持最多二级菜单（一个父菜单 + 多个子菜单）。
+
+---
+
 ## TCALS配置示例
 
 ```json
