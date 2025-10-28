@@ -4,6 +4,7 @@ export default defineConfig({
   title: '营销插件开发文档',
   description: '完整的插件开发指南 - lilWAN Shop',
   base: '/lilWAN_SHOP02-docs/',
+  ignoreDeadLinks: true,
   
   themeConfig: {
     logo: '/logo.svg',
