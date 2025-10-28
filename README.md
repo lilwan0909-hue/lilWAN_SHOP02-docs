@@ -7,7 +7,7 @@
 
 ## 📚 在线文档
 
-访问在线文档：**[https://your-username.github.io/lilWAN_SHOP02-docs/](https://your-username.github.io/lilWAN_SHOP02-docs/)**
+访问在线文档：**[https://lilwan0909-hue.github.io/lilWAN_SHOP02-docs/](https://lilwan0909-hue.github.io/lilWAN_SHOP02-docs/)**
 
 ## ✨ 特性
 
@@ -105,7 +105,7 @@ npm run docs:build
 ## 🔗 相关链接
 
 - [VitePress](https://vitepress.dev/) - 文档框架
-- [问题反馈](https://github.com/your-username/lilWAN_SHOP02-docs/issues)
+- [问题反馈](https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs/issues)
 
 ---
 

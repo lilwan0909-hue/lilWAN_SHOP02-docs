@@ -21,9 +21,9 @@
 
 ```bash
 cd /tmp/lilWAN_SHOP02-docs
-git remote add origin git@github.com:your-username/lilWAN_SHOP02-docs.git
+git remote add origin git@github.com:lilwan0909-hue/lilWAN_SHOP02-docs.git
 # 或者使用HTTPS
-# git remote add origin https://github.com/your-username/lilWAN_SHOP02-docs.git
+# git remote add origin https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs.git
 ```
 
 ### 1.3 推送代码
@@ -60,7 +60,7 @@ git push -u origin main
 部署成功后，访问：
 
 ```
-https://your-username.github.io/lilWAN_SHOP02-docs/
+https://lilwan0909-hue.github.io/lilWAN_SHOP02-docs/
 ```
 
 ## 三、更新文档
@@ -83,7 +83,7 @@ git push
 如果你有自己的域名（如`docs.example.com`），添加CNAME记录：
 
 ```
-CNAME  docs  your-username.github.io
+CNAME  docs  lilwan0909-hue.github.io
 ```
 
 ### 4.2 在GitHub配置
@@ -146,14 +146,14 @@ npm run docs:dev
 
 ## 七、更新仓库地址
 
-在所有文档中将 `your-username` 替换为你的实际GitHub用户名：
+在所有文档中将 `lilwan0909-hue` 替换为你的实际GitHub用户名：
 
 ```bash
 # 更新README.md中的链接
-sed -i 's/your-username/actual-username/g' README.md
+sed -i 's/lilwan0909-hue/actual-username/g' README.md
 
 # 更新其他引用
-grep -r "your-username" . --exclude-dir=node_modules
+grep -r "lilwan0909-hue" . --exclude-dir=node_modules
 ```
 
 提交更改：
