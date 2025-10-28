@@ -1,0 +1,26 @@
+{
+  "menus": [
+    {
+      "title": "生日券管理",
+      "path": "/marketing/birthday-coupon",
+      "component": "marketing/birthday-coupon",
+      "icon": "icon-gift",
+      "order": 10,
+      "children": [
+        {
+          "title": "发券记录",
+          "path": "/marketing/birthday-coupon/records",
+          "component": "marketing/birthday-coupon/records",
+          "order": 1
+        },
+        {
+          "title": "统计分析",
+          "path": "/marketing/birthday-coupon/statistics",
+          "component": "marketing/birthday-coupon/statistics",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}
+

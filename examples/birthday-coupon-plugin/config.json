@@ -1,0 +1,46 @@
+{
+  "config_items": [
+    {
+      "key": "birthday_coupon_template",
+      "label": "生日券模板ID",
+      "type": "select",
+      "options_api": "/api/admin/coupons/templates",
+      "required": true,
+      "description": "选择用户生日时自动发放的优惠券模板"
+    },
+    {
+      "key": "auto_send",
+      "label": "自动发放",
+      "type": "boolean",
+      "default": true,
+      "description": "是否在用户生日当天自动发放生日券"
+    },
+    {
+      "key": "daily_limit",
+      "label": "每人每天领券次数",
+      "type": "number",
+      "default": 1,
+      "min": 1,
+      "max": 10,
+      "required": true,
+      "description": "限制每个用户每天可以领取优惠券的次数"
+    },
+    {
+      "key": "send_message",
+      "label": "发送生日祝福",
+      "type": "boolean",
+      "default": true,
+      "description": "是否同时发送生日祝福消息"
+    },
+    {
+      "key": "advance_days",
+      "label": "提前发放天数",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 7,
+      "description": "可以提前N天发放生日券（0表示生日当天）"
+    }
+  ]
+}
+

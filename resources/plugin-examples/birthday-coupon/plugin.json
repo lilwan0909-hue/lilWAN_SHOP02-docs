@@ -1,0 +1,15 @@
+{
+    "code": "birthday-coupon",
+    "name": "生日优惠券",
+    "version": "1.0.0",
+    "author": "lilWAN Development Team",
+    "description": "生日月专享优惠券，用户生日当月可使用20元优惠券",
+    "type": "coupon",
+    "icon": "icon-gift",
+    "dependencies": {
+        "php": ">=8.3",
+        "laravel": ">=11.0",
+        "plugins": []
+    }
+}
+

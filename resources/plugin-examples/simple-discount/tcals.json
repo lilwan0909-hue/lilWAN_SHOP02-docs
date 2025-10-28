@@ -1,0 +1,34 @@
+{
+    "trigger": {
+        "type": "checkout",
+        "description": "结算时触发"
+    },
+    "conditions": {
+        "logic": "AND",
+        "rules": [
+            {
+                "type": "order_amount",
+                "min_amount": 50,
+                "description": "订单金额≥50元"
+            }
+        ]
+    },
+    "action": {
+        "type": "discount_percent",
+        "value": 10,
+        "description": "9折优惠（优惠10%）"
+    },
+    "limits": [
+        {
+            "type": "usage_count",
+            "max_count": 100000,
+            "description": "总使用次数10万次"
+        }
+    ],
+    "settlement": {
+        "step": 2,
+        "stacking_rule": "stack",
+        "mutex_with": []
+    }
+}
+

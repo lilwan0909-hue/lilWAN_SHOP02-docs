@@ -1,0 +1,23 @@
+{
+    "permissions": [
+        {
+            "name": "plugin:birthday-coupon:view",
+            "display_name": "查看生日优惠券",
+            "description": "查看生日优惠券列表和详情",
+            "group": "营销管理"
+        },
+        {
+            "name": "plugin:birthday-coupon:issue",
+            "display_name": "发放生日优惠券",
+            "description": "手动发放生日优惠券给用户",
+            "group": "营销管理"
+        },
+        {
+            "name": "plugin:birthday-coupon:stats",
+            "display_name": "查看统计数据",
+            "description": "查看生日优惠券使用统计",
+            "group": "营销管理"
+        }
+    ]
+}
+

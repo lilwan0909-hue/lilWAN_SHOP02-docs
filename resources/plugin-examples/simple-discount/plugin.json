@@ -1,0 +1,15 @@
+{
+    "code": "simple-discount",
+    "name": "全场9折",
+    "version": "1.0.0",
+    "author": "lilWAN Development Team",
+    "description": "全场9折优惠，订单满50元即可享受",
+    "type": "discount",
+    "icon": "icon-gift",
+    "dependencies": {
+        "php": ">=8.3",
+        "laravel": ">=11.0",
+        "plugins": []
+    }
+}
+

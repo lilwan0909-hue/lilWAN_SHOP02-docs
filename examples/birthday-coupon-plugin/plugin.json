@@ -1,0 +1,19 @@
+{
+  "plugin_id": "birthday_coupon",
+  "plugin_name": "生日券自动发放",
+  "plugin_version": "1.0.0",
+  "plugin_author": "lilWAN Team",
+  "plugin_description": "用户生日当天自动发放生日优惠券，支持自定义券模板和有效期",
+  "plugin_category": "discount_promotion",
+  "plugin_type": "coupon",
+  "menu_name": "生日券管理",
+  "menu_icon": "icon-gift",
+  "min_system_version": "1.0.0",
+  "dependencies": {
+    "modules": ["user", "order"],
+    "plugins": []
+  },
+  "install_sql": "install.sql",
+  "uninstall_sql": "uninstall.sql"
+}
+

@@ -1,0 +1,84 @@
+{
+  "triggers": [
+    {
+      "id": "user_birthday",
+      "name": "用户生日",
+      "scene": "user:birthday",
+      "description": "用户生日当天触发"
+    },
+    {
+      "id": "user_register",
+      "name": "用户注册",
+      "scene": "user:registered",
+      "description": "用户完成注册时触发（可选：发放新人券）"
+    }
+  ],
+  "conditions": [
+    {
+      "name": "user_daily_limit",
+      "rule": "user.coupon_received_today < config.daily_limit",
+      "message": "您今天已经领取过优惠券了"
+    },
+    {
+      "name": "user_not_blacklisted",
+      "rule": "user.in_blacklist == false",
+      "message": "您暂时无法领取优惠券"
+    },
+    {
+      "name": "user_has_birthday",
+      "rule": "user.birthday != null",
+      "message": "请先完善您的生日信息"
+    }
+  ],
+  "actions": [
+    {
+      "name": "send_birthday_coupon",
+      "type": "grant_coupon",
+      "params": {
+        "coupon_template_id": "${config.birthday_coupon_template}",
+        "expire_days": 7
+      },
+      "description": "发放7天有效期的生日券"
+    },
+    {
+      "name": "send_birthday_message",
+      "type": "send_message",
+      "params": {
+        "template": "birthday_greeting",
+        "channels": ["sms", "站内信"]
+      },
+      "description": "发送生日祝福消息"
+    }
+  ],
+  "limits": [
+    {
+      "name": "daily_receive_limit",
+      "scope": "per_user",
+      "limit_value": 1,
+      "limit_period": "daily",
+      "description": "每人每天限领1次"
+    },
+    {
+      "name": "annual_receive_limit",
+      "scope": "per_user",
+      "limit_value": 1,
+      "limit_period": "yearly",
+      "description": "每人每年限领1次（生日当天）"
+    },
+    {
+      "name": "total_budget",
+      "scope": "global",
+      "limit_value": 10000,
+      "limit_type": "amount",
+      "description": "总预算10000元"
+    }
+  ],
+  "settlement": {
+    "priority": 4,
+    "calculation": "min(coupon.discount, order.amount - order.threshold)",
+    "can_stack_with": ["full_discount", "member_discount"],
+    "cannot_stack_with": ["seckill"],
+    "description": "优惠券在价格结算顺序第4步执行"
+  }
+}
+

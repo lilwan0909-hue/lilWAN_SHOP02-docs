@@ -1,0 +1,38 @@
+{
+    "trigger": {
+        "type": "checkout",
+        "description": "结算时触发"
+    },
+    "conditions": {
+        "logic": "AND",
+        "rules": [
+            {
+                "type": "order_amount",
+                "min_amount": 100,
+                "description": "订单金额≥100元"
+            },
+            {
+                "type": "user_birthday_month",
+                "description": "用户生日月份"
+            }
+        ]
+    },
+    "action": {
+        "type": "discount_fixed",
+        "value": 20,
+        "description": "减20元"
+    },
+    "limits": [
+        {
+            "type": "user_usage",
+            "max_per_user": 1,
+            "description": "每用户每月限用1次"
+        }
+    ],
+    "settlement": {
+        "step": 2,
+        "stacking_rule": "stack",
+        "mutex_with": []
+    }
+}
+
