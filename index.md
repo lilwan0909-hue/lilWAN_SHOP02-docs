@@ -2,136 +2,158 @@
 layout: home
 
 hero:
-  name: 营销插件开发
-  text: 快速构建强大的营销功能
-  tagline: 5分钟创建插件，30分钟完成开发
+  name: lilWAN_SHOP02
+  text: 现代化 B2C 自营电商平台开发文档
+  tagline: Laravel + Vue + Taro 全栈解决方案
   actions:
     - theme: brand
-      text: 快速开始
+      text: 插件开发指南
       link: /plugin-development/01-快速开始
+    - theme: brand
+      text: API 文档
+      link: /docs/api/overview
     - theme: alt
       text: 查看示例
       link: /examples/
   image:
     src: /hero-image.svg
-    alt: 营销插件系统
+    alt: lilWAN_SHOP02 电商系统
 
 features:
-  - icon: 🚀
-    title: 极速开发
-    details: 使用CLI工具5分钟生成完整插件骨架，大幅降低开发门槛
+  - icon: 🏗️
+    title: 现代化架构
+    details: 后端 Laravel API + PC 端 Blade SSR + 管理后台 Vue Arco Pro + 移动端 Taro 多端
   - icon: 🔌
-    title: 即插即用
-    details: 热插拔设计，上传即可启用，禁用不影响系统运行
-  - icon: 🎯
-    title: TCALS引擎
-    details: 强大的规则引擎，支持触发器、条件、动作、限制和结算配置
-  - icon: 📦
-    title: 完整生态
-    details: 提供模板、示例、文档和开发工具，覆盖从入门到精通的全流程
-  - icon: 🛠️
-    title: 开发友好
-    details: TypeScript支持、详细注释、完整测试、热更新开发体验
+    title: 插件化营销
+    details: TCALS 规则引擎，支持优惠券、秒杀、拼团、满减等营销活动热插拔
+  - icon: 📱
+    title: 多端支持
+    details: Taro 一次编码，编译为 H5、微信小程序、支付宝小程序、APP 等多端应用
   - icon: 🎨
-    title: 灵活扩展
-    details: 支持前端动态加载、Hook事件、权限控制等高级特性
+    title: 主题系统
+    details: PC 端 Blade 主题包，移动端动态组件加载，主题可热插拔
+  - icon: 🛡️
+    title: 统一 API 规范
+    details: 标准响应格式、错误码体系、认证机制、分页规范，前后端完全同步
+  - icon: 📚
+    title: 完整文档
+    details: 插件开发指南、API 接口文档、开发规范、最佳实践，覆盖全流程
 ---
 
-## 快速开始
+## 文档导航
+
+### 📖 插件开发
+
+构建强大的营销功能插件：
+
+- [快速开始](/plugin-development/01-快速开始) - 5 分钟生成插件骨架
+- [TCALS 配置](/plugin-development/03-TCALS配置) - 规则引擎详解
+- [插件接口](/plugin-development/04-插件接口) - 核心接口说明
+- [示例插件](/examples/) - 从简单到复杂的实战案例
+
+### 🔌 API 接口
+
+完整的 API 开发规范：
+
+- [API 概览](/docs/api/overview) - 接口基础信息、响应结构
+- [认证说明](/docs/api/guidelines/authentication) - Token 认证机制
+- [错误处理规范](/docs/api/guidelines/error-handling) - 统一错误响应
+- [Apifox 导入指南](/docs/api/apifox-guide) - 接口文档管理
+
+### 🎯 项目特色
+
+#### 🏗️ 四端架构
+
+- **后端 API**：Laravel 11.32 + MySQL 8.0.35+
+- **PC 前台**：Blade SSR + Bootstrap 5.3.3
+- **管理后台**：Vue 3 + Arco Design Pro + Vite 5.x
+- **移动端**：Taro 4.0.8 + NutUI 4.3.19（H5/小程序/APP）
+
+#### 🚀 核心特性
+
+- **插件化营销引擎**：TCALS 模型，支持触发器、条件、动作、限制、结算
+- **动态菜单系统**：零路由配置，菜单基于数据库动态生成
+- **SPU/SKU 商品体系**：标准商品、虚拟商品、服务商品支持
+- **主题系统**：PC 端 Blade 主题包，移动端动态组件加载
+
+## API 路由说明
+
+### 管理后台 API
+
+**路由前缀**：`/admin`
+
+```bash
+# 管理员登录
+POST /admin/auth/login
+
+# 商品管理
+GET /admin/products
+POST /admin/products
+PUT /admin/products/{id}
+
+# 订单管理
+GET /admin/orders
+GET /admin/orders/{id}
+```
+
+**认证方式**：Bearer Token（Laravel Sanctum）  
+**使用端**：Vue Arco Pro 管理后台
+
+### 商城 API（移动端 + H5）
+
+**路由前缀**：`/api/v1`
+
+```bash
+# 用户认证
+POST /api/v1/auth/login
+POST /api/v1/auth/register
+
+# 商品浏览
+GET /api/v1/products
+GET /api/v1/products/{id}
+
+# 订单管理
+POST /api/v1/orders
+GET /api/v1/orders/{id}
+```
+
+**认证方式**：Bearer Token（Laravel Sanctum）  
+**使用端**：Taro 多端应用（H5/小程序/APP）
+
+---
+
+## 快速示例
+
+### 开发营销插件
 
 ```bash
 # 1. 生成插件骨架
 php artisan marketing:make-plugin my-discount \
   --name="我的折扣" \
-  --type=discount \
-  --step=2
+  --type=discount
 
 # 2. 编辑插件逻辑
 cd storage/app/plugins/my-discount
 vim src/Plugin.php
 
-# 3. 打包上传
+# 3. 打包上传到管理后台
 zip -r my-discount.zip .
 ```
 
-## 为什么选择我们？
+### 调用商城 API
 
-### 🎓 新手友好
+```typescript
+// Taro 移动端调用
+import Taro from '@tarojs/taro';
 
-- ✅ 5分钟生成插件脚手架
-- ✅ 30分钟完成简单插件
-- ✅ 2小时理解完整流程
-
-### 🚀 开发高效
-
-- ✅ 插件开发时间：从2小时 → 30分钟
-- ✅ 配置错误率：从30% → 5%
-- ✅ 学习成本：从1周 → 2小时
-
-### 📚 文档完善
-
-- ✅ 10,000+字核心文档
-- ✅ 丰富的代码示例
-- ✅ 完整的学习路径
-- ✅ 实用的扩展思路
-
-## 核心特性
-
-### TCALS规则引擎
-
-```json
-{
-  "trigger": { "type": "checkout" },
-  "conditions": {
-    "logic": "AND",
-    "rules": [{ "type": "order_amount", "min_amount": 100 }]
-  },
-  "action": { "type": "discount_fixed", "value": 20 },
-  "limits": [{ "type": "user_usage", "max_per_user": 3 }],
-  "settlement": { "step": 2, "stacking_rule": "stack" }
-}
+const res = await Taro.request({
+  url: 'https://api.yourdomain.com/api/v1/products',
+  method: 'GET',
+  header: {
+    Authorization: `Bearer ${token}`
+  }
+});
 ```
-
-### 插件接口
-
-```php
-class Plugin implements MarketingPluginInterface
-{
-    public function getCode(): string { return 'my-plugin'; }
-    
-    public function calculate(PricingContext $context): array
-    {
-        $discount = $context->currentAmount * 0.1;
-        return [
-            'discount_amount' => $discount,
-            'items' => [],
-            'metadata' => ['rate' => 0.1]
-        ];
-    }
-}
-```
-
-## 示例插件
-
-<div class="examples-grid">
-  <a href="/examples/simple-discount" class="example-card">
-    <h3>⭐ 简单折扣</h3>
-    <p>全场9折优惠，适合新手学习</p>
-    <span class="tag">~120行</span>
-  </a>
-  
-  <a href="/examples/birthday-coupon" class="example-card">
-    <h3>⭐⭐⭐ 生日优惠券</h3>
-    <p>生日月专享，包含数据库操作</p>
-    <span class="tag">~250行</span>
-  </a>
-  
-  <a href="/examples/flash-sale" class="example-card">
-    <h3>⭐⭐⭐⭐⭐ 限时秒杀</h3>
-    <p>高并发秒杀系统（待补充）</p>
-    <span class="tag">~500行</span>
-  </a>
-</div>
 
 ## 技术栈
 
@@ -150,7 +172,7 @@ class Plugin implements MarketingPluginInterface
     <ul>
       <li>Vue 3.5+</li>
       <li>Vite 5.x</li>
-      <li>Element Plus</li>
+      <li>Arco Design Pro</li>
     </ul>
   </div>
   
@@ -159,7 +181,7 @@ class Plugin implements MarketingPluginInterface
     <ul>
       <li>CLI脚手架</li>
       <li>插件模板</li>
-      <li>测试工具</li>
+      <li>Apifox/Postman</li>
     </ul>
   </div>
 </div>

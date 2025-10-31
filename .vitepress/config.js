@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: '营销插件开发文档',
-  description: '完整的插件开发指南 - lilWAN Shop',
+  title: 'lilWAN_SHOP02 开发文档',
+  description: '完整的插件开发指南与 API 文档 - lilWAN Shop',
   base: '/lilWAN_SHOP02-docs/',
   ignoreDeadLinks: true,
   
@@ -10,9 +10,9 @@ export default defineConfig({
     logo: '/logo.svg',
     
     nav: [
-      { text: '指南', link: '/plugin-development/' },
+      { text: '插件开发', link: '/plugin-development/' },
       { text: '示例', link: '/examples/' },
-      { text: 'API', link: '/plugin-development/04-插件接口' },
+      { text: 'API文档', link: '/docs/api/overview' },
       { 
         text: '相关链接',
         items: [
@@ -70,6 +70,39 @@ export default defineConfig({
             { text: '简单折扣', link: '/examples/simple-discount' },
             { text: '生日优惠券', link: '/examples/birthday-coupon' },
             { text: '限时秒杀', link: '/examples/flash-sale' }
+          ]
+        }
+      ],
+      
+      '/docs/api/': [
+        {
+          text: 'API 概览',
+          collapsed: false,
+          items: [
+            { text: '接口规范总览', link: '/docs/api/overview' },
+            { text: 'Apifox 导入与使用指南', link: '/docs/api/apifox-guide' }
+          ]
+        },
+        {
+          text: '开发指南',
+          collapsed: false,
+          items: [
+            { text: '认证说明', link: '/docs/api/guidelines/authentication' },
+            { text: '错误处理规范', link: '/docs/api/guidelines/error-handling' },
+            { text: '常见错误码使用指南', link: '/docs/api/guidelines/error-codes' },
+            { text: '前端错误提示规范', link: '/docs/api/guidelines/frontend-errors' },
+            { text: '分页说明', link: '/docs/api/guidelines/pagination' }
+          ]
+        },
+        {
+          text: '接口模块',
+          collapsed: false,
+          items: [
+            { text: '认证管理', link: '/docs/api/modules/authentication' },
+            { text: '用户管理', link: '/docs/api/modules/user' },
+            { text: '商品管理', link: '/docs/api/modules/product' },
+            { text: '订单管理', link: '/docs/api/modules/order' },
+            { text: '营销管理', link: '/docs/api/modules/marketing' }
           ]
         }
       ]

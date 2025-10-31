@@ -18,7 +18,7 @@ git remote add origin git@github.com:lilwan0909-hue/lilWAN_SHOP02-docs.git
 git push -u origin main
 
 # 5. 在GitHub启用Actions权限
-# 访问: https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs/settings/actions
+# 访问: https://github.com/your-username/lilWAN_SHOP02-docs/settings/actions
 # 选择: Read and write permissions
 # 勾选: Allow GitHub Actions to create and approve pull requests
 
@@ -49,10 +49,10 @@ cd ~/projects/lilWAN_SHOP02-docs
 
 ```bash
 # 使用SSH（推荐，需要配置SSH密钥）
-git remote add origin git@github.com:lilwan0909-hue/lilWAN_SHOP02-docs.git
+git remote add origin git@github.com:your-username/lilWAN_SHOP02-docs.git
 
 # 或使用HTTPS（需要输入用户名和密码）
-# git remote add origin https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs.git
+# git remote add origin https://github.com/your-username/lilWAN_SHOP02-docs.git
 
 # 推送
 git push -u origin main
@@ -60,7 +60,7 @@ git push -u origin main
 
 ### Step 4: 配置GitHub Actions权限
 
-1. 访问: `https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs/settings/actions`
+1. 访问: `https://github.com/your-username/lilWAN_SHOP02-docs/settings/actions`
 2. **Workflow permissions** → **Read and write permissions**
 3. 勾选 **Allow GitHub Actions to create and approve pull requests**
 4. Save
@@ -70,7 +70,7 @@ git push -u origin main
 推送后，GitHub Actions会自动运行并部署。
 
 查看进度：
-- 访问 `https://github.com/lilwan0909-hue/lilWAN_SHOP02-docs/actions`
+- 访问 `https://github.com/your-username/lilWAN_SHOP02-docs/actions`
 - 等待绿色✓
 
 ### Step 6: 访问文档
@@ -157,7 +157,7 @@ cat ~/.ssh/id_ed25519.pub
 
 现在你的文档已经在线了！
 
-- 📖 在线文档: `https://lilwan0909-hue.github.io/lilWAN_SHOP02-docs/`
+- 📖 在线文档: `https://your-username.github.io/lilWAN_SHOP02-docs/`
 - 🔧 本地开发: `npm run docs:dev`
 - 📝 更新文档: `git push`（自动部署）
 
