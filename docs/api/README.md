@@ -17,13 +17,23 @@
 - [前端错误提示规范](./guidelines/frontend-errors.md) - 前端错误提示设计原则
 - [分页说明](./guidelines/pagination.md) - 分页参数与响应格式
 
-### 🔌 接口模块
+### 🔌 管理后台API（/admin）
 
-- [认证管理](./modules/authentication.md) - 注册、登录、登出
-- [用户管理](./modules/user.md) - 用户信息、收货地址
-- [商品管理](./modules/product.md) - 商品浏览、详情、规格
-- [订单管理](./modules/order.md) - 下单、支付、物流
-- [营销管理](./modules/marketing.md) - 优惠券、满减、秒杀
+- [完整接口清单](./admin-api-reference.md) - 商品、订单、库存等核心接口
+- [用户管理](./admin/user-management.md) - 用户CRUD、标签、分群、统计
+- [系统管理](./admin/system-management.md) - 管理员、角色、权限、菜单、设置
+- [营销管理](./admin/marketing-management.md) - 优惠券、插件、秒杀、拼团、风控
+- [财务管理](./admin/finance-management.md) - 账户、流水、对账、发票、提现
+- [CMS内容管理](./admin/cms-management.md) - 文章、广告、导航、媒体库
+
+### 🛒 商城API（/api/v1）
+
+- [认证管理](./mall/authentication.md) - 注册、登录、登出
+- [用户中心](./mall/user-center.md) - 个人资料、地址、支付密码、合规
+- [商品浏览](./mall/product-browsing.md) - 商品列表、搜索、详情、分类
+- [购物车与订单](./mall/cart-order.md) - 购物车、下单、支付、物流
+- [营销活动](./mall/marketing-activities.md) - 优惠券、秒杀、拼团、满减
+- [系统配置](./mall/system-config.md) - 系统设置、协议、友情链接
 
 ---
 
@@ -125,7 +135,8 @@ GET /api/v1/orders/{id}
 ### 当前状态（2025-10-31）
 
 - ✅ **开发指南文档**：已完成 6 篇核心文档
-- ⏳ **模块接口文档**：占位文件已创建，待从 Apifox 导出补充
+- ✅ **管理后台API文档**：已完成 6 篇详细文档（200+接口）
+- ✅ **商城API文档**：已完成 6 篇详细文档（50+接口）
 - ✅ **VitePress 配置**：侧边栏和导航已配置完成
 
 ### 下一步计划

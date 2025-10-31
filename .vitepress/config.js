@@ -95,14 +95,27 @@ export default defineConfig({
           ]
         },
         {
-          text: '接口模块',
+          text: '管理后台API（/admin）',
           collapsed: false,
           items: [
-            { text: '认证管理', link: '/docs/api/modules/authentication' },
-            { text: '用户管理', link: '/docs/api/modules/user' },
-            { text: '商品管理', link: '/docs/api/modules/product' },
-            { text: '订单管理', link: '/docs/api/modules/order' },
-            { text: '营销管理', link: '/docs/api/modules/marketing' }
+            { text: '完整接口清单', link: '/docs/api/admin-api-reference' },
+            { text: '用户管理', link: '/docs/api/admin/user-management' },
+            { text: '系统管理', link: '/docs/api/admin/system-management' },
+            { text: '营销管理', link: '/docs/api/admin/marketing-management' },
+            { text: '财务管理', link: '/docs/api/admin/finance-management' },
+            { text: 'CMS内容管理', link: '/docs/api/admin/cms-management' }
+          ]
+        },
+        {
+          text: '商城API（/api/v1）',
+          collapsed: false,
+          items: [
+            { text: '认证管理', link: '/docs/api/mall/authentication' },
+            { text: '用户中心', link: '/docs/api/mall/user-center' },
+            { text: '商品浏览', link: '/docs/api/mall/product-browsing' },
+            { text: '购物车与订单', link: '/docs/api/mall/cart-order' },
+            { text: '营销活动', link: '/docs/api/mall/marketing-activities' },
+            { text: '系统配置', link: '/docs/api/mall/system-config' }
           ]
         }
       ]
